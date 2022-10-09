@@ -3,7 +3,7 @@
 Arduino library for creating asymmetrically signed jwt. Supports ES256 only.
 
 
-- Generate key pair using using gen_keys.fish 
+- Generate key pair using using `gen_keys.fish`
 ```bash
 fish gen_keys.fish
 
@@ -18,6 +18,8 @@ read EC key
 writing EC key
 Keys have been created.
 ```
+
+- For adding private key in esp8266 with `platform.io` . After running the `gen_keys.fish`, there will be a data directory in root. In platform.io select `Build Filesystem Image` and then `Upload Filesystem Image` .
 
 ```cpp
 
