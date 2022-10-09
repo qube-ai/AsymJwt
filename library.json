@@ -1,0 +1,18 @@
+{
+  "name": "AsymJwt",
+  "description": "A library for creating asymmetrically signed jwt. Supports ES256 only.",
+  "keywords": "Encryption,JWT",
+  "version": "0.1.0",
+  "authors": {
+    "name": "Hrithik",
+    "email": "hrithik@qube.eco",
+    "url": "https://qube.eco"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Qube-ai/AsymJwt"
+  },
+  "license": "MPL-2.0",
+  "frameworks": "arduino",
+  "platforms": "espressif8266,espressif32,atmelavr,atmelsam"
+}
