@@ -1,15 +1,6 @@
-#pragma once
 
-#include <Arduino.h>
+#include <crypto/make_jwt.h>
 
-#include <stdio.h>
-
-#include "crypto/ecc.h"
-#include "crypto/ecdsa.h"
-#include "crypto/nn.h"
-#include "crypto/sha256.h"
-
-// base64_encode copied from https://github.com/ReneNyffenegger/cpp-base64
 static const char base64_chars[] =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "abcdefghijklmnopqrstuvwxyz"
@@ -66,11 +57,6 @@ String base64_encode(const unsigned char *bytes_to_encode, unsigned int in_len)
     return ret;
 }
 
-String base64_encode(String str)
-{
-    return base64_encode((const unsigned char *)str.c_str(), str.length());
-}
-
 String MakeBase64Signature(NN_DIGIT *signature_r, NN_DIGIT *signature_s)
 {
     unsigned char signature[64];
@@ -89,7 +75,7 @@ String CreateJwt(String payload, NN_DIGIT *priv_key)
 
     // header: base64_encode("{\"alg\":\"ES256\",\"typ\":\"JWT\"}") + "."
     String header_payload_base64 =
-        "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9." + base64_encode(payload);
+        "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9." + base64_encode((const unsigned char *)payload.c_str(), payload.length());
 
     Sha256 sha256Instance;
     sha256Instance.update((const unsigned char *)header_payload_base64.c_str(), header_payload_base64.length());
