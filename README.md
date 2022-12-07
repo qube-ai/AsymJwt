@@ -106,14 +106,14 @@ void loop()
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the UnLicense - see the [LICENSE](LICENSE) file for details
 
 ## Configuration
 
-- Enable debug mode by defining `AsymJwt_Logging` before including the library.
+- Enable debug mode by defining `ASYMJWT_DEBUG` before including the library.
   
   ```cpp
-  #define AsymJwt_Logging 1
+  #define ASYMJWT_DEBUG 1
 
   #include <AsymJwt.h>
   ```
