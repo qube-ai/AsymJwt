@@ -22,7 +22,7 @@ bool AsymJWT::readPrivKey(String path)
 {
     if (!LittleFS.begin())
     {
-        Serial.println("[AsymJwt.readPrivKey] Failed to mount file system");
+        AsymJwt_Logln("[AsymJwt.readPrivKey] Failed to mount file system");
         return false;
     }
     File f = LittleFS.open(path, "r");
@@ -37,12 +37,12 @@ bool AsymJWT::readPrivKey(String path)
         storePrivateKey(pk.getEC()->x);
 
         // Private key setup complete
-        Serial.println("[AsymJwt.readPrivKey] Private key setup complete");
+        AsymJwt_Logln("[AsymJwt.readPrivKey] Private key setup complete");
         return true;
     }
     else
     {
-        Serial.println("[AsymJwt.readPrivKey] No private key found on device! Retyring in 2 seconds");
+        AsymJwt_Logln("[AsymJwt.readPrivKey] No private key found on device!");
         return false;
     }
 }
