@@ -1,9 +1,10 @@
-ifdef AsymJwt_Logging
+#ifdef ASYMJWT_DEBUG
     #define AsymJwt_Log(...) Serial.print(__VA_ARGS__)
     #define AsymJwt_Logln(...) Serial.println(__VA_ARGS__)
-else
+#else
     #define AsymJwt_Log(...) (void)0
     #define AsymJwt_Logln(...) (void)0
+#endif
 
 #include <Arduino.h>
 
