@@ -1,7 +1,5 @@
 #include "AsymJwt.h"
 
-#include "LittleFS.h"
-#include "WiFiClientSecureBearSSL.h"
 
 NN_DIGIT priv_key[9];
 

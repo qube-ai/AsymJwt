@@ -11,6 +11,10 @@
 #ifndef AsymJwt_h
 #define AsymJwt_h
 
+
+#include "LittleFS.h"
+#include "WiFiClientSecureBearSSL.h"
+
 #include "crypto/make_jwt.h"
 #include "crypto/nn.h"
 #include "crypto/ecc.h"
